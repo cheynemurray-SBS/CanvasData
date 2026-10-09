@@ -169,6 +169,15 @@ blockquote cite{display:block;font-family:var(--sans);font-style:normal;font-siz
 .insights dt{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--maroon-deep);grid-column:auto}
 .insights dd{margin:4px 0 0;font-size:.92rem;line-height:1.5;color:var(--muted)}
 @media (max-width:560px){.insights{grid-template-columns:1fr}}
+.fr-note{max-width:75ch;font-size:.93rem;color:var(--muted);border-left:3px solid var(--gold);padding:4px 0 4px 14px;margin:0 0 20px}
+.fr-note strong{color:var(--ink)}
+.floatnav{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;background:var(--maroon-deep);border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.18);overflow:hidden;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.floatnav.on{opacity:1;transform:none;pointer-events:auto}
+.floatnav button{font:inherit;font-size:.86rem;font-weight:600;color:#fff;background:transparent;border:0;padding:10px 16px;cursor:pointer}
+.floatnav button + button{border-left:1px solid rgba(255,255,255,.25)}
+.floatnav button:hover{background:rgba(255,255,255,.12)}
+.floatnav button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+@media (prefers-reduced-motion: reduce){.floatnav{transition:none}}
 /* Decision */
 .decision{background:var(--maroon-deep);color:#fff;border-top:0}
 :root[data-theme="dark"] .decision{background:#2A1419}
@@ -294,12 +303,12 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
     </div>
     <div class="thanks rise">
       <p class="thanks-big">Thank you.</p>
-      <p class="thanks-body"><strong>To all 90 of you who completed the survey: your voice has been heard.</strong> You took time during a busy start to the term to tell us, candidly and in detail, what works, what doesn't, and what a change would cost you. We read every comment, and what you shared shaped the decision and every commitment on this page.</p>
+      <p class="thanks-body"><strong>To all 90 of you who completed the survey: your voice has been heard.</strong> You took time during a busy start to the term to tell us, candidly and in detail, what works, what doesn't, and what a change would cost you. We read every comment, and your feedback will be shared with University leadership as they consider the path forward. It also shapes every commitment on this page.</p>
     </div>
     <div class="hero-grid">
       <div class="rise">
-        <h1>Canvas stays. Now we make it work better for you.</h1>
-        <p class="sub">Switching platforms would cost more than it would give back. Here's what you said, the decision it led to, and the support you asked for.</p>
+        <h1>Your message was clear: keep Canvas, and make it work better.</h1>
+        <p class="sub">Here's what you said, the overall sentiment it points to, and the support available to you now.</p>
         <p class="meta">90 faculty responded between September 23 and October 4, 2026.</p>
       </div>
       <figure class="dots-card rise" style="margin:0">
@@ -418,8 +427,8 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
 
 <section class="decision" id="decision">
   <div class="wrap">
-    <h2>Our decision: the University will not pursue a new LMS.</h2>
-    <p class="lede">Canvas remains our learning management system. The time and energy a migration would have consumed goes instead into making Canvas fit your teaching more closely.</p>
+    <h2>The overall sentiment: faculty favor staying with Canvas.</h2>
+    <p class="lede">Taken together, your responses point clearly toward keeping Canvas and investing in making it work better for your teaching. Any decision about the University's learning management system rests with the Provost and the President. Our role in IT is to bring your voice forward faithfully, and to support you in whichever direction the University takes.</p>
     <div class="reasons">
       <div class="reason">
         <h3>It already meets your needs</h3>
@@ -434,15 +443,16 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
         <p>What you asked for is better grading options, more control over course layout, and easier access for students and colleagues. Most of that is training, settings, or policy, not a new platform.</p>
       </div>
     </div>
-    <p class="fine">Several of you told us a switch would only make sense with clear, faculty-agreed benefits. We agree with that standard. Any future proposal would need a compelling benefit case, reliable full-fidelity migration of your content, real training and support capacity, and faculty involvement from the start.</p>
-    <p class="fine">A few of you asked whether cost, or a decision already made, was behind this survey. These results are the basis for this decision, and we're sharing them in full so you can see that for yourselves.</p>
+    <p class="fine">Several of you told us a switch would only make sense with clear, faculty-agreed benefits. That standard is reflected in what we're bringing forward, along with the conditions you raised for any future change: a compelling benefit case, reliable full-fidelity migration of your content, real training and support capacity, and faculty involvement from the start.</p>
+    <p class="fine">A few of you asked whether cost, or a decision already made, was behind this survey. We're sharing these results in full so the faculty perspective is visible to everyone, including those who will make the final decision.</p>
   </div>
 </section>
 
 <section id="support">
   <div class="wrap">
     <h2>You asked, here's what we'll do</h2>
-    <div class="prose"><p class="lede">We read every comment and grouped your requests by theme. Each one is matched to the kind of response it needs: support we can offer right away, a policy we need to review with campus partners, or a request we'll take to Instructure, the company behind Canvas.</p></div>
+    <div class="prose"><p class="lede">We read every comment and grouped your requests by theme. Each one is matched to the kind of response it needs: support we can offer right away, a policy we need to review with campus partners, or a request we'll take to Instructure, the company behind Canvas.</p>
+      <p class="fr-note"><strong>A note on feature requests.</strong> We submit requests to Instructure and advocate for them, but the process is largely one-way. Instructure decides whether and when to build a feature, and rarely shares feedback or a timeline, so we can't promise when, or if, a requested change will arrive.</p></div>
     <div class="filters" role="group" aria-label="Filter by type of response">
       <button type="button" data-f="all" aria-pressed="true">All themes</button>
       <button type="button" data-f="support" aria-pressed="false">Support and training</button>
@@ -539,14 +549,15 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
           <li>Drop-in rollover help before each term starts.</li>
           <li>Review whether new course shells should hide Files from students by default.</li>
         </ul>
+        <p class="guides">We recommend hiding the Files link from students. Guide: <a href="https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-manage-Course-Navigation-links/ta-p/1020" target="_blank" rel="noopener">how to edit course navigation</a>.</p>
       </div>
 
       <details class="tracker airesources">
         <summary>Best practices for files, visibility, and a new term <span>(5 strategies)</span></summary>
         <div class="aigrid bp">
-          <div class="aigroup"><h4>Keep sensitive files out of reach</h4><ul><li><span>Unpublishing a quiz or page doesn't hide the files attached to it. Unpublish or restrict the file itself in Files as well.</span></li><li><span>Keep exams and answer keys in their own folder and leave that folder unpublished, so everything inside stays hidden.</span></li><li><span>Hiding the Files link in Settings, then Navigation, removes the page from students' view, but files linked from published pages can still be opened. Check those links too.</span></li><li><span>Better still, keep answer keys out of the course entirely, in your personal Canvas files or University cloud storage.</span></li></ul></div>
+          <div class="aigroup"><h4>Keep sensitive files out of reach</h4><ul><li><span><strong>Our recommendation: hide the Files link from students.</strong> In Settings, open the Navigation tab, drag Files into the hidden list, and save. Students then reach files only through the modules and pages you link them from. <a href="https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-manage-Course-Navigation-links/ta-p/1020" target="_blank" rel="noopener">How to edit course navigation</a></span></li><li><span>Unpublishing a quiz or page doesn't hide the files attached to it. Unpublish or restrict the file itself in Files as well.</span></li><li><span>Keep exams and answer keys in their own folder and leave that folder unpublished, so everything inside stays hidden.</span></li><li><span>Hiding the Files link doesn't lock files that are linked from published pages, so check those links too.</span></li><li><span>Better still, keep answer keys out of the course entirely, in your personal Canvas files or University cloud storage.</span></li></ul></div>
           <div class="aigroup"><h4>Make scheduled availability behave</h4><ul><li><span>Set available-from and available-until dates on the file or folder itself, using Schedule student availability.</span></li><li><span>A file inside an unpublished or restricted folder stays hidden even if the file's own dates have passed. Check the folder settings first.</span></li><li><span>Dates follow your Canvas time zone, so confirm your profile's time zone is set correctly.</span></li><li><span>After setting dates, check what students will see in Student View.</span></li></ul></div>
-          <div class="aigroup"><h4>Start the term with less to clean up</h4><ul><li><span>Import into a fresh, empty course shell rather than one that already has content.</span></li><li><span>Choose Select specific content during import, and bring over only the modules, assignments, and files you plan to use.</span></li><li><span>Use the date-adjustment option during import to shift due dates and availability to the new term in one step.</span></li></ul></div>
+          <div class="aigroup"><h4>Start the term with less to clean up</h4><ul><li><span>Import into a fresh, empty course shell rather than one that already has content.</span></li><li><span>Choose Select specific content during import, and bring over only the modules, assignments, and files you plan to use.</span></li><li><span>Use the date-adjustment option during import to shift due dates and availability to the new term in one step.</span></li><li><span>Teaching the same course every term or across several sections? Ask us about a Blueprint course. You maintain one master version, and your updates sync to each section without re-importing. <a href="https://outlook.office365.com/owa/calendar/InstructionalTechnologyServices@uredlands.onmicrosoft.com/bookings/" target="_blank" rel="noopener">Book a time to talk it through</a>.</span></li></ul></div>
           <div class="aigroup"><h4>Clean up files in bulk</h4><ul><li><span>In Files, check the boxes next to several files to delete or move them together instead of one at a time.</span></li><li><span>Organize files into folders by unit or type before you copy a course, so next term's cleanup is a matter of deleting a folder.</span></li></ul></div>
           <div class="aigroup"><h4>Check before students arrive</h4><ul><li><span>Walk through modules, pages, and files in Student View before publishing.</span></li><li><span>Run Validate Links in Content from the course Settings sidebar to catch broken links after an import.</span></li><li><span>Book drop-in rollover help or email <a href="mailto:canvas_support@redlands.edu">canvas_support@redlands.edu</a> before the term starts if anything looks off.</span></li></ul></div>
         </div>
@@ -563,7 +574,7 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
         <span class="kind">Support and training, plus requests to Instructure</span>
         <ul>
           <li>Sessions on building and organizing question banks so your work is easier to reuse and to protect.</li>
-          <li>Submit the features Canvas lacks to Instructure and report back on responses.</li>
+          <li>Submit the features Canvas lacks to Instructure as feature requests.</li>
           <li>We're exploring online proctoring and academic honesty tools that work inside Canvas quizzes and assessments. Any tool we consider will go through the same security and privacy review as other integrations before it reaches your courses.</li>
         </ul>
         <p class="guides">Guides available now: <a href="https://redlands.instructure.com/courses/9979/pages/quizzes" target="_blank" rel="noopener">quizzes</a> and <a href="https://redlands.instructure.com/courses/9979/pages/rubrics" target="_blank" rel="noopener">rubrics, including the new rubric editor</a>.</p>
@@ -587,12 +598,12 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
         <p class="guides">Instructors can already switch available AI features on or off in their own course under Settings, then Feature Options. See the guides below.</p>
       </div>
       <details class="tracker airesources">
-        <summary>AI resources for faculty <span>(9 guides)</span></summary>
+        <summary>AI resources for faculty <span>(10 guides)</span></summary>
         <div class="aigrid">
           <div class="aigroup"><h4>Know what AI is in Canvas</h4><ul><li><a href="https://www.instructure.com/igniteai" target="_blank" rel="noopener">IgniteAI overview</a><span>Instructure's summary of the AI built into Canvas, including its opt-in design and pledge not to train models on institutional data without consent.</span></li><li><a href="https://community.canvaslms.com/t5/Artificial-Intelligence-in/gh-p/ai_education" target="_blank" rel="noopener">AI Nutrition Facts hub</a><span>A label for each Instructure AI feature explaining the model it uses, what data it touches, and how that data is handled.</span></li><li><a href="https://www.instructure.com/about/ai-guiding-principles" target="_blank" rel="noopener">Instructure's AI guiding principles</a><span>The commitments Instructure says it follows when building AI into Canvas.</span></li></ul></div>
           <div class="aigroup"><h4>Features you may see in your course</h4><ul><li><a href="https://community.canvaslms.com/t5/Artificial-Intelligence-in/AI-Nutrition-Facts-Canvas-Discussion-Summaries/ta-p/608252" target="_blank" rel="noopener">Discussion Summaries</a><span>Instructor-only summaries of discussion threads. Nutrition facts and data handling.</span></li><li><a href="https://community.canvaslms.com/t5/Artificial-Intelligence-in/AI-Nutrition-Facts-Canvas-Smart-Search/ta-p/608254" target="_blank" rel="noopener">Smart Search</a><span>AI-powered search across course content. Nutrition facts and data handling.</span></li><li><a href="https://community.canvaslms.com/t5/Artificial-Intelligence-in/AI-Nutrition-Facts-Canvas-Inbox-and-Course-AI-Translation/ta-p/608256" target="_blank" rel="noopener">Inbox and Course Translation</a><span>AI translation in the Inbox, Discussions, and Announcements. Nutrition facts and data handling.</span></li></ul></div>
           <div class="aigroup"><h4>Turn features on or off in your course</h4><ul><li><a href="https://community.canvaslms.com/docs/DOC-2283" target="_blank" rel="noopener">How to manage course feature options</a><span>Step-by-step guide to Settings, then Feature Options, where instructors can switch available AI previews on or off course by course.</span></li></ul></div>
-          <div class="aigroup"><h4>Set expectations with your students</h4><ul><li><a href="https://www.brandeis.edu/teaching/online-guides/syllabus/ai-statements.html" target="_blank" rel="noopener">AI syllabus statement templates (Brandeis University)</a><span>Four ready-to-adapt policies, from no AI use at all to open use with citation.</span></li><li><a href="https://academic-senate.berkeley.edu/sites/default/files/genai_guidance_for_instructors_2025.pdf" target="_blank" rel="noopener">Generative AI guidance for instructors (UC Berkeley Academic Senate)</a><span>Arguments for and against allowing AI, sample syllabus statements, and ways to reinforce your policy in assignments.</span></li></ul></div>
+          <div class="aigroup"><h4>Set expectations with your students</h4><ul><li><a href="https://redlands.instructure.com/courses/9979/modules/63281" target="_blank" rel="noopener">AI modules in our Canvas resource course</a><span>Three modules on AI in teaching, including sample syllabus statements from College of Arts and Sciences faculty.</span></li><li><a href="https://redlands.instructure.com/courses/9979/modules/54183" target="_blank" rel="noopener">Redlands AI resources and notes</a><span>Internal resources and guidance gathered by our team.</span></li><li><a href="https://academic-senate.berkeley.edu/sites/default/files/genai_guidance_for_instructors_2025.pdf" target="_blank" rel="noopener">Generative AI guidance for instructors (UC Berkeley Academic Senate)</a><span>Arguments for and against allowing AI, sample syllabus statements, and ways to reinforce your policy in assignments.</span></li><li><a href="https://outlook.office365.com/owa/calendar/InstructionalTechnologyServices@uredlands.onmicrosoft.com/bookings/" target="_blank" rel="noopener">Talk it through with us</a><span>Book time with our team, or connect with your subject librarian, to shape an AI policy for your course.</span></li></ul></div>
         </div>
         <p class="ainote">Instructure resources describe Canvas features in general. Which features are available, and whether they're on by default, depends on Redlands settings, so check your course's Feature Options or contact <a href="mailto:canvas_support@redlands.edu">canvas_support@redlands.edu</a>.</p>
       </details>
@@ -668,7 +679,7 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
         <div class="when">Ongoing</div>
         <ul>
           <li>Course design consultations and templates</li>
-          <li>Feature requests to Instructure, with updates</li>
+          <li>Feature requests submitted to Instructure</li>
           <li>Evaluation of proctoring and academic honesty tools</li>
           <li>Term-start notes on Canvas changes</li>
           <li>Progress posted on this page each term</li>
@@ -692,7 +703,7 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
       </div>
       <div>
         <h3>How you'll know we followed through</h3>
-        <p>We'll update this page each term with what's done, what's in progress, and what Instructure said about your feature requests. A short follow-up survey next year will tell us whether things improved.</p>
+        <p>We'll update this page each term with what's done and what's in progress. A short follow-up survey next year will tell us whether things improved.</p>
       </div>
     </div>
     <div class="resources">
@@ -708,7 +719,7 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
         <li><a href="https://community.canvaslms.com/docs/DOC-2283" target="_blank" rel="noopener">Course feature options</a><span>Turning AI features on or off in your course</span></li>
       </ul>
     </div>
-    <p class="sign">Thank you for helping shape this decision.<span>Cheyne Murray, Senior Director of Information Technology</span></p>
+    <p class="sign">Thank you for making your voice heard.<span>Cheyne Murray, Senior Director of Information Technology</span></p>
   </div>
 </section>
 </main>
@@ -716,6 +727,11 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
 <footer>
   <div class="wrap">University of Redlands Information Technology, Canvas Reflection Survey, fall 2026</div>
 </footer>
+
+<nav class="floatnav" aria-label="Page navigation">
+  <button type="button" data-go="topics">Topics</button>
+  <button type="button" data-go="top" aria-label="Back to top"><span aria-hidden="true">↑</span> Top</button>
+</nav>
 
 <script>
 (function(){
@@ -807,6 +823,17 @@ footer{padding:32px 0 48px;font-size:.85rem;color:var(--muted);border-top:1px so
     function fallback(){var t=document.createElement('textarea');t.value=code;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){btn.textContent='Press Ctrl+C'}document.body.removeChild(t)}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(ok,fallback)}else{fallback()}
   })});
+
+  // Floating navigation
+  var fnav=document.querySelector('.floatnav');
+  var smooth=!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function onScroll(){fnav.classList.toggle('on',window.scrollY>600)}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  fnav.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    if(b.dataset.go==='top'){window.scrollTo({top:0,behavior:smooth?'smooth':'auto'});var h=document.querySelector('h1');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}}
+    else{var j=document.querySelector('.jumpbar');if(j){j.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});var a=j.querySelector('a');if(a)a.focus({preventScroll:true});}}
+  });
 
   // Theme filters
   var btns=document.querySelectorAll('.filters button'), themes=document.querySelectorAll('.theme');
